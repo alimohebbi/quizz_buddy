@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+# React Quiz Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive quiz application built with React and TypeScript that allows users to upload and take quizzes from CSV files.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📝 CSV file upload support for quiz questions
+- 🎯 Interactive quiz interface
+- ✨ Real-time score tracking
+- 🎨 Modern UI with Tailwind CSS
+- 🔄 Option to restart with new quiz files
+- 📱 Responsive design
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19.1.0
+- TypeScript 5.8.3
+- Tailwind CSS 4.1.11
+- Papa Parse 5.5.3
+- Framer Motion 12.23.6
+- Shadcn/UI
+- Vite 7.0.4
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Node.js (Latest LTS version recommended)
+- npm (Node Package Manager)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Installation
+
+1. Clone the repository:
+```aiignore
+git clone <repository-url>
+```
+3. Install dependencies:
+```aiignore
+npm install
+```
+3. Navigate to the project directory:
+```aiignore
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Launch the application
+2. Upload a CSV file containing quiz questions
+3. Answer each question by selecting from the provided options
+4. View your final score upon completion
+5. Option to start a new quiz with a different file
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## CSV File Format
+
+The application expects CSV files with the following column structure:
+- `question`: The quiz question
+- `answer`: The correct answer
+- `options`: Multiple choice options (comma-separated)
+
+Example CSV format:
+
+```csv
+question,correct_answer,choice_a,choice_b,choice_c,choice_d
+What is the capital of France?,b,London,Paris,Berlin,Madrid
 ```

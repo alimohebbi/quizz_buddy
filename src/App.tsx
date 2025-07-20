@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Papa from 'papaparse';
 import { FileUploader } from './components/FileUploader';
 import { QuizCard } from './components/QuizCard';
@@ -9,7 +9,7 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
-  const handleFile = (file) => {
+  const handleFile = (file: any) => {
     Papa.parse(file, {
       header: true,
       skipEmptyLines: true,
